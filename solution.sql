@@ -136,10 +136,18 @@ WHERE customer_id = '100';
 --  Task: Write a single query that shows the id, status, and order total
 -- for all orders made by 'pclark74@gmail.com'. Use a sub-select to do this.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT id, status, order_total
+FROM orders
+WHERE customer_id IN (
+  SELECT id
+  FROM customers
+  WHERE email = 'pclark74@gmail.com'
+);
 
 -- Problem 22:
 -- Write a query that shows the total amount of revenue that comes
 -- from internet orders.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT SUM(order_total)
+FROM orders
+WHERE salesperson_id is NULL;
