@@ -106,29 +106,31 @@ WHERE shipto_state = 'CA';
 -- Task: Write a query that shows the total amount of money spent
 -- across all melon orders.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT SUM(order_total) FROM orders;
 
 -- Problem 17:
 -- Task: Write a query that shows the average order cost.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT AVG(order_total) FROM orders;
 
 -- Problem 18:
 -- Task: Write a query that shows the order total that was lowest in price.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT MIN(order_total) FROM orders;
 
 -- Problem 19:
 -- Task: Write a query that fetches the id of the customer whose email
 -- is 'pclark74@gmail.com'.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT id FROM customers WHERE email = 'pclark74@gmail.com';
 
 -- Problem 20:
 -- Task: Write a query that shows the id, status and order_total for all
 -- orders made by customer 100.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT id, status, order_total
+FROM orders
+WHERE customer_id = '100';
 
 -- Problem 21:
 --  Task: Write a single query that shows the id, status, and order total
