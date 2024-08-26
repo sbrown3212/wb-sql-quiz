@@ -66,33 +66,41 @@ SELECT email FROM salespeople WHERE region = 'Northwest' OR region = 'Southwest'
 -- Task: Write a query that shows the emails of all salespeople from
 -- both the Northwest and Southwest regions, this time using an 'IN' clause.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT email FROM salespeople WHERE region IN ('Northwest', 'Southwest');
 
 -- Problem 12:
 -- Task: Write a query that shows the email, given name, and surname of
 -- all salespeople in either the Northwest or Southwest regions whose
 -- surnames start with the letter 'M'.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT email,
+  first_name, 
+  last_name 
+FROM salespeople
+WHERE region IN ('Northwest', 'Southwest')
+  AND last_name Like ('M%');
 
 -- Problem 13:
 -- Task: Write a query that shows the melon type, common name, price, and
 -- the price of the melon given in euros. The 'melons' table has prices in
 -- dollars, and the dollar to euro conversion rate is 0.73.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT melon_type, common_name, price, (price * 0.73) AS euro
+FROM melons;
 
 -- Problem 14:
 -- Task: Write a query that shows the total number of customers in our
 -- customer table.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT COUNT(*) FROM customers;
 
 -- Problem 15:
 -- Task: Write a query that counts the number of orders shipped to
 -- California.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT COUNT(*)
+FROM orders
+WHERE shipto_state = 'CA';
 
 -- Problem 16:
 -- Task: Write a query that shows the total amount of money spent
