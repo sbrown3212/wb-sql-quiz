@@ -36,31 +36,31 @@ SELECT common_name FROM melons WHERE price > 5;
 -- Task: Write a query that shows the common name and price for all
 -- watermelons that cost more than $5.00.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT common_name, price FROM melons WHERE price > 5 AND melon_type = 'Watermelon';
 
 -- Problem 7:
 -- Task: Write a query that displays all common names of melons that
 -- start with the letter 'C'.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT common_name FROM melons WHERE common_name LIKE 'C%';
 
 -- Problem 8:
 -- Task: Write a query that shows the common name of any melon with
 -- 'Golden' anywhere in the common name.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT common_name FROM melons WHERE common_name LIKE '%Golden%';
 
 -- Problem 9:
 -- Task: Write a query that shows all the distinct regions that a
 -- salesperson can belong to.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT DISTINCT (region) FROM salespeople;
 
 -- Problem 10:
 -- Task: Write a query that shows the emails of all salespeople from
 -- both the Northwest and Southwest regions.
 
--- REPLACE THIS WITH YOUR QUERY
+SELECT email FROM salespeople WHERE region = 'Northwest' OR region = 'Southwest';
 
 -- Problem 11:
 -- Task: Write a query that shows the emails of all salespeople from
